@@ -1,0 +1,19 @@
+<h2><%= @update_form.name %></h2>
+
+<h3>Questions</h3>
+
+<%if @update_form.questions.empty? %>
+  <p class='empty-questions'>You have not added any questions yet</p>
+<% end %>
+
+<ol id="questions" data-update_form_id="<%= @update_form.id %>">
+  <%= render @update_form.questions %>
+</ol>
+
+<h3>New Question</h3>
+
+<%= form_for [@update_form, Question.new], remote: true do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.submit %>
+<% end %>
