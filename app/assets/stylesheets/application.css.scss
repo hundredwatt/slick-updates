@@ -1,0 +1,25 @@
+/*!
+  SSO default stylesheet
+*/
+@import 'bourbon';
+@import 'neat';
+
+// Globals
+@import 'globals/colors';
+
+// Gaggle-assets
+@import "font-awesome-sprockets";
+@import 'gaggle-assets';
+@import 'bootstrap-grid';
+
+// Gems
+@import "font-awesome";
+
+// Mixins
+@import "mixins/responsive";
+
+// Layout
+@import "layout/layout";
+
+// Modules
+@import "modules/questions";

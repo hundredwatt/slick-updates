@@ -1,9 +1,14 @@
-<h2><%= @update_form.name %></h2>
-
 <% public_update_form = publicize @update_form %>
 
-<%= render public_update_form %>
+<section>
+  <header>
+    <h2><%= @update_form.name %></h2>
+  </header>
 
-<br/>
+  <div class="col-md-6 col-md-offset-3">
+    <%= render public_update_form %>
 
-<%= text_area_tag :message %>
+    <h3>Copy Message to Slack:</h3>
+    <%= text_area_tag :message, '', class: 'form-control', rows: 16, readonly: true %>
+  </div>
+</section>

@@ -4,7 +4,7 @@ $ ->
     connected: ->
       $('#questions').on 'click', '.move-up, .move-down', (e)=>
         e.preventDefault()
-        $question_el = $(e.currentTarget).parent()
+        $question_el = $(e.currentTarget).parents('li')
         $swap_el = if $(e.currentTarget).hasClass('move-up')
           $question_el.prev()
         else

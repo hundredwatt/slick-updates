@@ -24,8 +24,15 @@ gem 'puma'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Asset related libraries
+gem 'bourbon', '<= 4.0.2'
+gem 'neat', '<= 1.7.0'
+gem 'gaggle-assets', '~> 1.0', path: '../gaggle-assets' #source: 'https://Ahcm9rTQJHAmAwicSGyJ@gem.fury.io/me/'
+gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'formtastic-bootstrap'
+gem 'sass', '~> 3.4.5'
+gem 'sass-rails'
+gem 'font_assets'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

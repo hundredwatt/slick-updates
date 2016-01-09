@@ -1,6 +1,10 @@
 <li id="<%= dom_id question %>" data-position="<%= question.position %>">
-  <%= question.text %>
-  <%= link_to 'Delete', [@update_form, question], method: :delete, remote: true %>
-  <%= link_to 'Move Up', '#', class: 'move-up' %>
-  <%= link_to 'Move Down', '#', class: 'move-down' %>
+
+  <div class='actions pull-right'>
+    <%= link_to icon('trash-o fa-2x'), [@update_form, question], method: :delete, remote: true %>
+    <%= link_to icon('arrow-up fa-2x'), '#', class: 'move-up' %>
+    <%= link_to icon('arrow-down fa-2x'), '#', class: 'move-down' %>
+  </div>
+  <div class='question-text'><%= question.text %></div>
+  <br/>
 </li>

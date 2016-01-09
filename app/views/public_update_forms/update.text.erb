@@ -1,4 +1,4 @@
-<%- @public_update_form.questions.each do |question| %>
+<%- @public_update_form.answered_questions.each do |question| %>
 *<%= question.text %>*: <%= question.answer %>
 
 <%- end %>

@@ -1,0 +1,27 @@
+// Phone portrait
+@mixin phone {
+  @media only screen and (max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+// Tablet
+@mixin tablet  {
+  @media only screen and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+// Desktop
+@mixin desktop  {
+  @media only screen and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+// Huge
+@mixin huge  {
+  @media only screen and (min-width: $screen-lg-min) {
+    @content;
+  }
+}

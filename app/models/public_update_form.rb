@@ -11,6 +11,10 @@ class PublicUpdateForm
     @update_form = args.first
   end
 
+  def answered_questions
+    questions.select { |q| q.answer.present? }
+  end
+
   def questions_attributes=(attributes)
     attributes.each do |_, question_attributes|
       questions.detect { |q| q.id.to_s == question_attributes['id'] }.tap do |question|
