@@ -9,9 +9,22 @@ class QuestionsController < ApplicationController
 
     if request.xhr?
       ActionCable.server.broadcast \
-        "update_form_#{@update_form.id}_questions", @question.to_json(only: [:id, :text])
+        "update_form_#{@update_form.id}_questions", @question.as_json(only: [:id, :text])
 
       head :created
+    end
+  end
+
+  def destroy
+    @question = @update_form.questions.find(params[:id])
+
+    @question.destroy!
+
+    if request.xhr?
+      ActionCable.server.broadcast \
+        "update_form_#{@update_form.id}_questions", { id: @question.id, destroyed: true }
+
+      head :no_content
     end
   end
 

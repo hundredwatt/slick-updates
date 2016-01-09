@@ -1,1 +1,4 @@
-<li><%= question.text %></li>
+<li id="<%= dom_id question %>">
+  <%= question.text %>
+  <%= link_to 'Delete', [@update_form, question], method: :delete, remote: true %>
+</li>

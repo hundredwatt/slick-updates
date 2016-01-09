@@ -1,9 +1,7 @@
-App.update_form_questions = App.cable.subscriptions.create "UpdateFormQuestionsChannel",
-  connected: ->
-    # Called when the subscription is ready for use on the server
-
-  disconnected: ->
-    # Called when the subscription has been terminated by the server
-
-  received: (data) ->
-    # Called when there's incoming data on the websocket for this channel
+$ ->
+  App.cable.subscriptions.create { channel: "UpdateFormQuestionsChannel", update_form_id: $('#questions').data('update_form_id') },
+    received: (data) ->
+      if data.destroyed
+        $('#questions').find("#question_#{data.id}").remove()
+      else
+        $('#questions').append("<li id='question_#{data.id}'>#{data.text}</li>")
