@@ -11,7 +11,7 @@ class Question < ApplicationRecord
 
   after_update do
     ActionCable.server.broadcast \
-      "update_form_#{update_form_id}_questions", as_json(only: [:id, :position]).merge(updated: true)
+      "update_form_#{update_form_id}_questions", as_json(only: [:id, :text, :position]).merge(updated: true)
   end
 
   default_scope -> { order('position') }

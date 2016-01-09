@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
 
     if request.xhr?
       ActionCable.server.broadcast \
-        "update_form_#{@update_form.id}_questions", @question.as_json(only: [:id, :text])
+        "update_form_#{@update_form.id}_questions", { html: render(@question) }
 
       head :created
     end

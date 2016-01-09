@@ -2,7 +2,7 @@ $ ->
   App.cable.subscriptions.create { channel: "UpdateFormQuestionsChannel", update_form_id: $('#questions').data('update_form_id') },
 
     connected: ->
-      $('.move-up, .move-down').on 'click', (e)=>
+      $('#questions').on 'click', '.move-up, .move-down', (e)=>
         e.preventDefault()
         $question_el = $(e.currentTarget).parent()
         $swap_el = if $(e.currentTarget).hasClass('move-up')
@@ -21,9 +21,10 @@ $ ->
         $('#questions').find("#question_#{data.id}").remove()
       else if data.updated
         $('#questions').find("#question_#{data.id}").data('position', data.position)
+        $('#questions').find("#question_#{data.id} span").text(data.text)
         $('#questions').trigger('app:updated')
-      else
-        $('#questions').append("<li id='question_#{data.id}'>#{data.text}</li>")
+      else if data.html
+        $('#questions').append(data.html)
 
     swap: (this_id, target_id)->
       @perform('swap', question1_id: this_id, question2_id: target_id)
