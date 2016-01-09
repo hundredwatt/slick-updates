@@ -1,4 +1,6 @@
-<li id="<%= dom_id question %>">
+<li id="<%= dom_id question %>" data-position="<%= question.position %>">
   <%= question.text %>
   <%= link_to 'Delete', [@update_form, question], method: :delete, remote: true %>
+  <%= link_to 'Move Up', '#', class: 'move-up' %>
+  <%= link_to 'Move Down', '#', class: 'move-down' %>
 </li>

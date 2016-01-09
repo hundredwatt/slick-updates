@@ -7,3 +7,11 @@ $ ->
   ).on('submit', (e)->
     $('p.empty-questions').remove()
   )
+
+  $('#questions').on 'app:updated', ->
+    $li_elements = $(this).children('li')
+
+    $li_elements.sort (a, b)->
+      $(a).data('position') - $(b).data('position')
+
+    $(this).append($li_elements)

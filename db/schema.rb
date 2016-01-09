@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20160109034815) do
 
   create_table "questions", force: :cascade do |t|
     t.integer  "update_form_id"
+    t.integer  "position",       null: false
     t.text     "text"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
