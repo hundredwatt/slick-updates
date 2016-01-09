@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+UpdateForm.create(name: 'Jason\'s Form').tap do |form|
+  form.questions.create(text: 'Favorite Moment?')
+  form.questions.create(text: 'Obstacle?')
+end
