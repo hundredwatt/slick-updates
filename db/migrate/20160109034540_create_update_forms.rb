@@ -6,7 +6,7 @@ class CreateUpdateForms < ActiveRecord::Migration[5.0]
 
       t.timestamps
 
-      t.index :token
+      t.index :token, unique: true
     end
   end
 end
