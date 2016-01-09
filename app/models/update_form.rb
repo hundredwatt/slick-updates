@@ -1,0 +1,2 @@
+class UpdateForm < ApplicationRecord
+end

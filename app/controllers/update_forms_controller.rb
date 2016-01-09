@@ -1,0 +1,2 @@
+class UpdateFormsController < ApplicationController
+end
