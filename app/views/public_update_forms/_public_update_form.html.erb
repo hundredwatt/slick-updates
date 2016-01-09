@@ -1,0 +1,12 @@
+<%= form_for public_update_form, format: :text, remote: true do |f| %>
+  <% f.object.questions.each do |question| %>
+    <%= f.fields_for :questions, question do |q| %>
+      <%= q.label :text, q.object.text %>
+      <br/>
+      <%= q.text_area :answer %>
+      <br/>
+      <br/>
+    <% end %>
+  <% end %>
+  <%= f.submit 'Create Message' %>
+<% end %>
