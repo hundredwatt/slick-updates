@@ -1,4 +1,6 @@
+
 <%- @public_update_form.answered_questions.each do |question| %>
-*<%= question.text %>*: <%= question.answer %>
+*<%= question.text %>*:
+<%= question.answer %>
 
 <%- end %>

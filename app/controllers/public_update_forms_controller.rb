@@ -1,6 +1,6 @@
 class PublicUpdateFormsController < ApplicationController
   before_action :set_update_form
-  after_action :strip_response_body, only: :update
+  after_action :rstrip_response_body, only: :update
 
   def show
   end
@@ -16,8 +16,8 @@ class PublicUpdateFormsController < ApplicationController
     @update_form = UpdateForm.find_by! token: params[:token]
   end
 
-  def strip_response_body
-    self.response_body[0].strip!
+  def rstrip_response_body
+    self.response_body[0].rstrip!
   end
 
   def public_update_form_params
