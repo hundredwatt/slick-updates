@@ -24,6 +24,10 @@ gem 'puma'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Authentication
+gem 'omniauth'
+gem 'foyer', path: '../foyer'
+
 # Asset related libraries
 gem 'bourbon', '<= 4.0.2'
 gem 'neat', '<= 1.7.0'
