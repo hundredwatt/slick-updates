@@ -4,13 +4,15 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.beta1', '< 5.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', groups: [:development, :test]
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+gem 'pg', group: :production
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -26,12 +28,12 @@ gem 'puma'
 
 # Authentication
 gem 'omniauth'
-gem 'foyer', path: '../foyer'
+gem 'foyer', github: 'GaggleAMP/foyer', branch: 'rails5'
 
 # Asset related libraries
 gem 'bourbon', '<= 4.0.2'
 gem 'neat', '<= 1.7.0'
-gem 'gaggle-assets', '~> 1.0', path: '../gaggle-assets' #source: 'https://Ahcm9rTQJHAmAwicSGyJ@gem.fury.io/me/'
+gem 'gaggle-assets', '~> 1.0', source: 'https://Ahcm9rTQJHAmAwicSGyJ@gem.fury.io/me/'
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'formtastic-bootstrap'
 gem 'sass', '~> 3.4.5'

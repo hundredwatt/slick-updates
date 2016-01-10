@@ -1,28 +1,21 @@
 GIT
+  remote: git://github.com/GaggleAMP/foyer.git
+  revision: d36015fbfc986cf0ebb8d31672c3c297ed03dfbb
+  branch: rails5
+  specs:
+    foyer (0.2.1)
+      rails (>= 4.0)
+
+GIT
   remote: git://github.com/justinfrench/formtastic.git
   revision: 88f28a0bc2cdea61347b5f773ce058d68ce2fc4f
   specs:
     formtastic (3.2.0.pre)
       actionpack (>= 3.2.13)
 
-PATH
-  remote: ../foyer
-  specs:
-    foyer (0.2.1)
-      rails (>= 4.0)
-
-PATH
-  remote: ../gaggle-assets
-  specs:
-    gaggle-assets (1.0.3)
-      bourbon (~> 4.0, >= 4.0.2)
-      font-awesome-sass (~> 4.2, >= 4.2.0)
-      neat (~> 1.6, >= 1.6.0)
-      railties (>= 4.0.5)
-      sass (~> 3.4, >= 3.4.5)
-
 GEM
   remote: https://rubygems.org/
+  remote: https://Ahcm9rTQJHAmAwicSGyJ@gem.fury.io/me/
   specs:
     actioncable (5.0.0.beta1)
       actionpack (= 5.0.0.beta1)
@@ -115,6 +108,12 @@ GEM
       rack
     formtastic-bootstrap (3.1.1)
       formtastic (>= 3.0)
+    gaggle-assets (1.0.4)
+      bourbon (~> 4.0, >= 4.0.2)
+      font-awesome-sass (~> 4.2, >= 4.2.0)
+      neat (~> 1.6, >= 1.6.0)
+      railties (>= 4.0.5)
+      sass (~> 3.4, >= 3.4.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.3)
@@ -146,6 +145,7 @@ GEM
     omniauth (1.3.1)
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
+    pg (0.18.4)
     puma (2.15.3)
     rack (2.0.0.alpha)
       json
@@ -231,6 +231,7 @@ DEPENDENCIES
   jquery-rails
   neat (<= 1.7.0)
   omniauth
+  pg
   puma
   rails (>= 5.0.0.beta1, < 5.1)
   sass (~> 3.4.5)
