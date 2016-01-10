@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :public_update_forms, path: 'updates', param: :token, only: [:show, :update]
 
-  resources :update_forms, only: [:new, :create] do
+  resources :update_forms, only: [:index, :new, :create] do
     resources :questions, only: [:index, :create, :destroy]
   end
 end

@@ -1,3 +1,22 @@
 <% title 'Manage Update Forms' %>
 
-<%= link_to 'New Form', new_update_form_path %>
+<section>
+  <header>
+    <h2>Manage Update Forms</h2>
+  </header>
+
+  <div class="col-md-6 col-md-offset-3">
+    <%= link_to 'New Update Form', new_update_form_path %>
+
+    <h3>My Update Forms</h3>
+
+    <% if @update_forms.empty? %>
+      You have not created any Update Forms yet
+    <% end %>
+    <ul>
+      <% @update_forms.each do |update_form| %>
+        <li><%= link_to update_form.name, [update_form, :questions] %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
