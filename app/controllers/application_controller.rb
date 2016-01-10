@@ -6,11 +6,4 @@ class ApplicationController < ActionController::Base
   include Foyer::Controller::Helpers
 
   before_action :authenticate_user!
-
-  protected
-
-  # Override to support email store in session.
-  def current_user
-    super.update(email: user_session['email'])
-  end
 end

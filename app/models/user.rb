@@ -1,1 +1,3 @@
-User = Class.new(Hashie::Mash)
+class User < ApplicationRecord
+  has_many :update_forms
+end
