@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  authenticate do
+    root to: redirect('/update_forms')
+  end
   root to: 'high_voltage/pages#show', id: 'home'
 
   # Serve websocket cable requests in-process
