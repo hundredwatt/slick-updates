@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 @App = {}
-App.cable = ActionCable.createConsumer("ws://localhost:3000/cable")
+App.cable = ActionCable.createConsumer()
