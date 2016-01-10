@@ -1,4 +1,6 @@
 class UpdateFormsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @update_forms = current_user.update_forms
   end

@@ -1,6 +1,4 @@
 class PublicUpdateFormsController < ApplicationController
-  skip_before_action :authenticate_user!
-
   before_action :set_update_form
   after_action :rstrip_response_body, only: :update
 
