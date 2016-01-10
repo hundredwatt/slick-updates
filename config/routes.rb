@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'high_voltage/pages#show', id: 'home'
+
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
 

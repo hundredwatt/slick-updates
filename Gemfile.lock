@@ -13,6 +13,13 @@ GIT
     formtastic (3.2.0.pre)
       actionpack (>= 3.2.13)
 
+GIT
+  remote: git://github.com/thoughtbot/high_voltage.git
+  revision: 32ae7427ebd752de421322a7876adada445aad1a
+  branch: master
+  specs:
+    high_voltage (2.4.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://Ahcm9rTQJHAmAwicSGyJ@gem.fury.io/me/
@@ -227,6 +234,7 @@ DEPENDENCIES
   formtastic-bootstrap
   foyer!
   gaggle-assets (~> 1.0)!
+  high_voltage!
   jbuilder (~> 2.0)
   jquery-rails
   neat (<= 1.7.0)

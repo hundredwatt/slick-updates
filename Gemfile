@@ -30,6 +30,9 @@ gem 'puma'
 gem 'omniauth'
 gem 'foyer', github: 'GaggleAMP/foyer', branch: 'rails5'
 
+# Static Pages
+gem 'high_voltage', github: 'thoughtbot/high_voltage', branch: 'master'
+
 # Asset related libraries
 gem 'bourbon', '<= 4.0.2'
 gem 'neat', '<= 1.7.0'
