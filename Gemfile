@@ -27,7 +27,9 @@ gem 'puma'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Authentication
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'omniauth'
+gem 'omniauth-google-oauth2'
 gem 'foyer', github: 'GaggleAMP/foyer', branch: 'rails5'
 
 # Static Pages
