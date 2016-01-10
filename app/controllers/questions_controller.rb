@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
   private
 
   def set_update_form
-    @update_form = UpdateForm.find(params[:update_form_id])
+    @update_form = current_user.update_forms.find(params[:update_form_id])
   end
 
   def set_question

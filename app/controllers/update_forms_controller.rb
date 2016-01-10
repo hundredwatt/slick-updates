@@ -3,11 +3,11 @@ class UpdateFormsController < ApplicationController
   end
 
   def new
-    @update_form = UpdateForm.new
+    @update_form = current_user.update_forms.new
   end
 
   def create
-    @update_form = UpdateForm.create(update_form_params)
+    @update_form = current_user.update_forms.create(update_form_params)
 
     redirect_to update_form_questions_path(@update_form)
   end
