@@ -18,5 +18,15 @@
         <li><%= link_to update_form.name, [update_form, :questions] %></li>
       <% end %>
     </ul>
+    
+    <% if @invited_update_forms.present? %>
+      <h3>Invited Update Forms</h3>
+      <ul>
+      <% @invited_update_forms.each do |update_form| %>
+        
+        <li><%= link_to update_form.name, [update_form, :questions] %></li>
+      <% end %>
+    </ul>
+  <% end %>
   </div>
 </section>
