@@ -12,8 +12,10 @@ class InvitesController < ApplicationController
       flash[:error] = "User is already invited to collaborate on Update Form"
     else
       @update_form.collaborators.create(user_id: new_user.id)
-      if false # if new user is logged in
+      if new_user.is_logged_in?
         # Send Action Cable notification to logged in user
+        ActionCable.server.broadcast \
+          "logged_in_#{new_user.id}", { message: prepare_message }
       elsif @existing_user
         # Email should be delivered through sidekiq/resque or any other background processor
         # Notify to collaborate on udpate form
@@ -35,7 +37,6 @@ class InvitesController < ApplicationController
   end
   
   private
-  
   def set_update_form
     @update_form = UpdateForm.where(id: params[:update_form_id]).first
   end

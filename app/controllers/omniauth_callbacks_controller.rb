@@ -2,6 +2,9 @@ class OmniauthCallbacksController < Foyer::OmniauthCallbacksController
   def callback
     find_or_create_user
     sign_in @user
+    
+    # Set logged in user id to get it in ActionCable connection for current_user
+    cookies.signed['user.id'] = @user.id
 
     redirect_to after_sign_in_path
   end
