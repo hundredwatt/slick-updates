@@ -15,6 +15,6 @@ class UpdateFormBasePolicy
   end
   
   def is_owner?
-    update_form.user.id == user.id
+    update_form.is_owner?(user)
   end
 end

@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :update_forms, only: [:index, :new, :create] do
     resources :questions, only: [:index, :create, :destroy]
+    resources :invites, only: [:create, :destroy]
   end
 end
