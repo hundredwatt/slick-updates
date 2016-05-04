@@ -33,6 +33,9 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'foyer', github: 'GaggleAMP/foyer', branch: 'rails5'
 
+# Authorization
+gem "pundit"
+
 # Static Pages
 gem 'high_voltage', github: 'thoughtbot/high_voltage', branch: 'master'
 
