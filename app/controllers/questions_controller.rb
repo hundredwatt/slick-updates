@@ -4,9 +4,11 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:destroy]
 
   def index
+    authorize @update_form, :show?
   end
 
   def create
+    authorize @update_form, :show?
     @question = @update_form.questions.create!(create_params)
 
     if request.xhr?
@@ -18,6 +20,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    authorize @question
     @question.destroy!
 
     if request.xhr?
@@ -31,7 +34,7 @@ class QuestionsController < ApplicationController
   private
 
   def set_update_form
-    @update_form = current_user.update_forms.find(params[:update_form_id])
+    @update_form = UpdateForm.find(params[:update_form_id])
   end
 
   def set_question
