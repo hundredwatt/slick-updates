@@ -7,7 +7,6 @@ RSpec.describe QuestionsController, :type => :controller do
     @update_form = create(:update_form, user: @user)
     @update_form.questions.create(text: "What you have done today?")
     @new_user = create(:user)
-    #sign_in @new_user
   end
   
   let(:create_params) { {update_form_id: @update_form.id, question: {text: 'any road block?'}}}
@@ -37,7 +36,6 @@ RSpec.describe QuestionsController, :type => :controller do
   describe "POST #create" do
     it "should create new question for update_form via authorized user" do
       sign_in @user
-      question_count = @update_form.questions.count
       expect{
         post :create, create_params
       }.to change{@update_form.questions.count}.by(1)
@@ -84,8 +82,5 @@ RSpec.describe QuestionsController, :type => :controller do
       }.to change{@update_form.questions.count}.by(0)
       expect(@update_form.questions.count).to eql 1
     end
-    
-    
   end
-    
 end

@@ -15,11 +15,8 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'rubygems'
-#ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-#require 'rails_helper'
-# require 'rspec/autorun'
 require 'factory_girl'
 require 'shoulda/matchers'
 
