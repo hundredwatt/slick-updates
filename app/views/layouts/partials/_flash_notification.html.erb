@@ -1,0 +1,15 @@
+<div id="notification-container" class="text-center">
+  <div class="notification container alert alert-success" >
+    <div id="flash_notice">
+    </div>
+  </div>
+</div>
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="notification text-center container alert alert-<%= name == "notice" ? "success" : "danger" %>" >
+      <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" %>
+    </div>
+  <% end %>
+<% end %>
+
+

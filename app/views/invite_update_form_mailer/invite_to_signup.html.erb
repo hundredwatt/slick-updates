@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Hi</h3>
+    <p>
+      You got invitation to help and manage the Update Form "<%= @update_form.name %>" from 
+      "<%= @update_form.user.email %>".<br>
+    </p>
+    <p>
+      Please <%= link_to 'signup', root_url %> to start collaborating.
+    </p><br/>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

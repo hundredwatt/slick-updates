@@ -33,6 +33,9 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'foyer', github: 'GaggleAMP/foyer', branch: 'rails5'
 
+# Authorization
+gem "pundit"
+
 # Static Pages
 gem 'high_voltage', github: 'thoughtbot/high_voltage', branch: 'master'
 
@@ -58,5 +61,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'shoulda-matchers', '~> 3.1'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -36,5 +36,21 @@
         <%= text_field_tag :public_link, 'https://' + request.host + url_for(publicize(@update_form)), class: 'form-control', readonly: true %>
       <% end %>
     </div>
+    
+    <h3>Collaborators</h3>
+
+    <ol id="collaborators" data-update_form_id="<%= @update_form.id %>">
+      <%= render @update_form.collaborators %>
+    </ol>
+    <% if @update_form.is_owner?(current_user) %>
+      <%= form_tag update_form_invites_path(@update_form) do %>
+        <div class="form-group">
+          <%= label_tag :invite_user_email, 'Email', class: 'control-label' %>
+          <%= text_field_tag :invite_user_email, "", class: 'form-control' %>
+        </div>
+        <%= submit_tag "Invite", class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
+    
   </div>
 </section>

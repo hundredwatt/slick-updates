@@ -1,0 +1,9 @@
+<li>
+  <% if @update_form.is_owner?(current_user) %>
+    <div class='actions pull-right'>
+      <%= link_to icon('trash-o fa-2x'), update_form_invite_path(@update_form, collaborator), method: :delete %>
+    </div>
+  <% end %>
+  <div class='question-text'><%= collaborator.user.email %></div>
+  <br/>
+</li>

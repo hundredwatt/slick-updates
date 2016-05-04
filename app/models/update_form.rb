@@ -1,6 +1,7 @@
 class UpdateForm < ApplicationRecord
   belongs_to :user
   has_many :questions
+  has_many :collaborators
 
   has_secure_token
 
@@ -13,5 +14,9 @@ class UpdateForm < ApplicationRecord
     Question.transaction do
       [question1, question2].each(&:save!)
     end
+  end
+  
+  def is_owner?(user)
+    self.user_id == user.id
   end
 end

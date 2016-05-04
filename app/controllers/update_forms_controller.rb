@@ -3,6 +3,7 @@ class UpdateFormsController < ApplicationController
 
   def index
     @update_forms = current_user.update_forms
+    @invited_update_forms = current_user.invited_update_forms
   end
 
   def new
