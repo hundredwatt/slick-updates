@@ -1,6 +1,7 @@
 class UpdateForm < ApplicationRecord
   belongs_to :user
   has_many :questions
+  has_many :collaborators
 
   has_secure_token
 
